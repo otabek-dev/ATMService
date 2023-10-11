@@ -29,7 +29,7 @@ function init() {
         draggable: true
       }),
       myPieChart = new ymaps.Placemark([
-        55.847, 37.6
+        41.319083, 65.222635
       ], {
         // Данные для построения диаграммы.
         data: [
