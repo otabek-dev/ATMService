@@ -2,8 +2,8 @@ ymaps.ready(init);
 
 function init() {
   const myMap = new ymaps.Map("map", {
-        center: [55.76, 37.64],
-        zoom: 10
+        center: [41.319083, 69.222635],
+        zoom: 13
       }, {
         searchControlProvider: 'yandex#search'
       }),
@@ -13,7 +13,7 @@ function init() {
         // Описание геометрии.
         geometry: {
           type: "Point",
-          coordinates: [55.8, 37.8]
+          coordinates: [41.319083, 69.222635]
         },
         // Свойства.
         properties: {
