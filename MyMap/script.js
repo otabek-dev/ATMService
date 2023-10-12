@@ -5,15 +5,24 @@
 //     maxZoom: 19,
 //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 // }).addTo(map);
+const tg = window.Telegram.WebApp;
+tg.expand();
 
-var map = L.map('map').fitWorld();
-
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 20,
-    attribution: '© OpenStreetMap'
+const key = 'Nsk4b8GeYz7KTFXj5fbR';
+const map = L.map('map').locate({ setView: true, maxZoom: 16 });
+const mtLayer = L.maptilerLayer({
+    apiKey: key,
+    style: L.MaptilerStyle.STREETS, // optional
 }).addTo(map);
 
-map.locate({ setView: true, maxZoom: 16 });
+// var map = L.map('map').fitWorld();
+
+// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     maxZoom: 20,
+//     attribution: '© OpenStreetMap'
+// }).addTo(map);
+
+// map.locate({ setView: true, maxZoom: 16 });
 
 function onLocationFound(e) {
     var radius = e.accuracy;
@@ -41,3 +50,4 @@ var ATMs = L.layerGroup([
 ]);
 
 ATMs.addTo(map);
+tg.ready();
